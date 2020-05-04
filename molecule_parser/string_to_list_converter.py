@@ -1,6 +1,6 @@
 from itertools import islice
 import collections
-from typing import List
+from typing import List, Iterable
 from molecule_parser.utils import Utils
 
 
@@ -33,7 +33,7 @@ def string_to_list_converter(convert_from: str) -> List:
     return result
 
 
-def consume_items_from_iterator(iterator, n):
+def consume_items_from_iterator(iterator: Iterable, n: int):
     if n is None:
         collections.deque(iterator, maxlen=0)
     else:
