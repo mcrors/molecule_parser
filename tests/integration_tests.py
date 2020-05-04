@@ -1,6 +1,5 @@
 import pytest
-from molecule_parser.main import molecule_parser
-from molecule_parser.errors import NotValidElementError
+from molecule_parser import molecule_parser, NotValidElementError
 
 
 def test_can_parse_water():
