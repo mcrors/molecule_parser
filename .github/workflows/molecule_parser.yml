@@ -1,4 +1,4 @@
-name: simpyinvoice_dev
+name: molecule_parser
 
 on:
   push:
