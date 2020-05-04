@@ -38,7 +38,7 @@ class Molecule:
         result = {}
         for index, item in enumerate(self._molecule):
             if isinstance(item, str):
-                if self._next_item_is_num(index):
+                if Utils.next_item_is_num(self._molecule, index):
                     result[item] = int(self._molecule[index+1])
                 else:
                     result[item] = 1
@@ -48,14 +48,9 @@ class Molecule:
         result = []
         for index, item in enumerate(self._molecule):
             if isinstance(item, list):
-                if self._next_item_is_num(index):
+                if Utils.next_item_is_num(self._molecule, index):
                     for _ in range(self._molecule[index+1]):
                         result.append(Molecule(item))
                 else:
                     result.append(Molecule(item))
         return result
-
-    def _next_item_is_num(self, index: int) -> bool:
-        if not Utils.is_last_item(self._molecule, index):
-            return isinstance(self._molecule[index + 1], int)
-        return False
