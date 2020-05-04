@@ -19,9 +19,11 @@ jobs:
     - name: Check Python Version
       run: |
         python --version
-    - name: Install PyTest
-      run: |
+    - name: Install molecule_parser
         python -m pip install --upgrade pip
+        pip install .
+    - name: Install pytest
+      run: |
         pip install pytest
     - name: Run Tests
       run: |
